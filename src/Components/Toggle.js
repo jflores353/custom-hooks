@@ -2,7 +2,8 @@ import React from 'react';
 import { useToggle } from '../hooks/useToggle';
 
 const Toggle = () => {
-	const [isToggled, setToggle, toggle] = useToggle(false);
+	// const [isToggled, setToggle, toggle] = useToggle(false);
+	const { isToggled, toggle } = useToggle(false);
 
 	return (
 		<div>

@@ -4,7 +4,11 @@ import { useCounter } from '../hooks/useCounter';
 
 const Counter = () => {
 	// const [value, setValue] = useState(0);
-	const [value, { increase, decrease }] = useCounter();
+	const [value, { increase, decrease, reset }] = useCounter({
+		initial: 5,
+		minValue: -10,
+		maxValue: 20,
+	});
 
 	return (
 		<div>
@@ -13,6 +17,7 @@ const Counter = () => {
 			{value}
 			{/* <button onClick={() => setValue((prevState) => prevState + 1)}>+</button> */}
 			<button onClick={increase}>+</button>
+			<button onClick={reset}>Reset</button>
 		</div>
 	);
 };
